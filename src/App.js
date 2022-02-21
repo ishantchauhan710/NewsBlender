@@ -13,7 +13,6 @@ function App() {
   const [newsResults,setNewsResults] = useState();
   const [category,setCategory] = useState('general');
 
-  console.log('Key: ',apiKey);
 
   const newsApiURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&category=${category}`
   
@@ -21,8 +20,8 @@ function App() {
   const newsApi = async() => {
     try {
       const news = await axios.get(newsApiURL);
-      //setNewsArray(news.data.articles);
-      //setNewsResults(news.data.totalResults);
+      setNewsArray(news.data.articles);
+      setNewsResults(news.data.totalResults);
       console.log(news.data);
     } catch(e) {
       console.log(e.message);
@@ -36,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <HeaderComponent />
-      <NewsComponent />
+      <NewsComponent newsItems={newsArray} />
     </div>
   );
 }
