@@ -24,7 +24,6 @@ function App() {
     setCategory(text)
   }
 
-
   const newsApiURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&category=${category}&pageSize=${loadMore}`
   const newsApiURLWithSearchQuery = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}&pageSize=${loadMore}`
   
@@ -47,6 +46,7 @@ function App() {
     try {
 
       if(searchQuery==='') {
+        console.log(newsApiURL);
         const news = await axios.get(newsApiURL);
         setNewsArray(news.data.articles);
         setNewsResults(news.data.totalResults);
