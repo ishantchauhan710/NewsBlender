@@ -29,7 +29,6 @@ function App() {
   const newsApiURLWithSearchQuery = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}&pageSize=${loadMore}`
   
   const searchNews = (searchNewsQuery) => {
-    console.log(searchNewsQuery);
     if(searchNewsQuery==='') {
       setSearchQuery('');
     } else {
@@ -40,6 +39,7 @@ function App() {
 
   useEffect(() => {
     newsApi()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[newsResults,category,searchQuery,loadMore]);
   
 
@@ -56,7 +56,6 @@ function App() {
         setNewsResults(news.data.totalResults);
       }
     
-      //console.log(news.data);
     } catch(e) {
       console.log(e.message);
     }
