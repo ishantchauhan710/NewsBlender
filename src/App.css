@@ -49,6 +49,10 @@ body {
   align-items: center;
 }
 
+.label-category {
+  margin-right: 20px;
+}
+
 .news-container {
   width: 65%;
   margin: 20px auto;
@@ -109,4 +113,40 @@ body {
   text-decoration: none;
   color: #333333;
   font-size: 0.85rem;
+}
+
+.news-url:hover {
+  text-decoration: underline;
+}
+
+.search-container {
+  display: flex;
+  height: 2.5rem;
+  align-items: center;
+  justify-content: center;
+  background-color: #ecedf7;
+}
+
+.input-search-news {
+  outline: none;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 0px;
+  background-color: #ecedf7;
+  font-size: 1rem;
+  padding-left: 10px;
+}
+
+.button-search-news {
+  width: 2.7rem;
+  height: 100%;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  background-color: #2b0996;
+  color: #ffffff;
+}
+
+.button-search-news:hover {
+  background-color: #111111;
 }

@@ -8,6 +8,7 @@ const HeaderComponent = (props) => {
           <DrawerComponent setNewsCategory={props.setNewsCategory} />
           </div>
         <div class="logo">News Blender</div>
+        <div class="label-category">{props.category}</div>
     </div>
   )
 }
