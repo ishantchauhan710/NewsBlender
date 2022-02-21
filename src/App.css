@@ -143,12 +143,12 @@ body {
   height: 100%;
   border: none;
   border-radius: 0px;
-  background-color: #ff6842;
+  background-color: #111111;
   color: #ffffff;
 }
 
 .button-search-news:hover {
-  background-color: #111111;
+  background-color: #333333;
 }
 
 .blend-more-news-container {
@@ -169,6 +169,29 @@ body {
 
 .button-blend-more-news:hover {
   background-color: #222222;
+}
+
+.hr-divider {
+  border: 1px solid rgba(0,0,0,0.07);
+}
+
+.footer-container {
+  background-color: #2b0996;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 1rem;
+  padding: 20px;
+}
+
+.heart-icon {
+  margin: 0px 7px;
+}
+
+.newspaper-icon {
+  margin-right: 20px;
+  font-size: 2.1rem;
 }
 
 @media (max-width: 800px) {
@@ -192,5 +215,8 @@ body {
     margin-bottom: 10px;
   }
   
+  .newspaper-icon {
+    display: none;
+  }
  
 }

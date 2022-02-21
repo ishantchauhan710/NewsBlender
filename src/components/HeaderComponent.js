@@ -7,7 +7,7 @@ const HeaderComponent = (props) => {
         <div class="button-drawer-menu">
           <DrawerComponent setNewsCategory={props.setNewsCategory} />
           </div>
-        <div class="logo">News Blender</div>
+        <div class="logo"><i class='newspaper-icon far fa-newspaper'></i> News Blender</div>
         <div class="label-category">{props.category}</div>
     </div>
   )
