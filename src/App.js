@@ -46,7 +46,6 @@ function App() {
     try {
 
       if(searchQuery==='') {
-        console.log(newsApiURL);
         const news = await axios.get(newsApiURL);
         setNewsArray(news.data.articles);
         setNewsResults(news.data.totalResults);
