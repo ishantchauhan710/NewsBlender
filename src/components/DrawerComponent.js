@@ -36,7 +36,7 @@ export default function SwipeableTemporaryDrawer() {
       <div className='label-news-categories'>Categories</div>  
       <Divider />  
       <List>
-        {['Latest News', 'Technology', 'Finance','Politics','Sports','Entertainment','Lifestyle'].map((text, index) => (
+        {['General', 'Technology', 'Finance','Politics','Sports','Entertainment','Lifestyle'].map((text, index) => (
           <ListItem button key={text}>
             <ListItemIcon>
               <NewspaperIcon />
