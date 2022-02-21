@@ -150,3 +150,23 @@ body {
 .button-search-news:hover {
   background-color: #111111;
 }
+
+.blend-more-news-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px 20px 20px;
+}
+
+.button-blend-more-news {
+    width: 10%;
+    border: none;
+    background-color: #444444;
+    padding: 10px;
+    color: #ffffff;
+    border-radius: 2px;
+}
+
+.button-blend-more-news:hover {
+  background-color: #222222;
+}

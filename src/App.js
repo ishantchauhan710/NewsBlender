@@ -14,8 +14,8 @@ function App() {
   const [newsArray,setNewsArray] = useState([]);
   const [newsResults,setNewsResults] = useState();
   const [category,setCategory] = useState('General');
-
   const [searchQuery,setSearchQuery] = useState('');
+  const [loadMore,setLoadMore] = useState(5);
 
 
   const setNewsCategory = (text) => {
@@ -23,9 +23,8 @@ function App() {
   }
 
 
-
-  const newsApiURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&category=${category}`
-  const newsApiURLWithSearchQuery = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}`
+  const newsApiURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&category=${category}&pageSize=${loadMore}`
+  const newsApiURLWithSearchQuery = `https://newsapi.org/v2/everything?q=${searchQuery}&apiKey=${apiKey}&pageSize=${loadMore}`
   
   const searchNews = (searchNewsQuery) => {
     console.log(searchNewsQuery);
@@ -39,7 +38,7 @@ function App() {
 
   useEffect(() => {
     newsApi()
-  },[newsResults,category,searchQuery]);
+  },[newsResults,category,searchQuery,loadMore]);
   
 
   const newsApi = async() => {
@@ -68,8 +67,20 @@ function App() {
       <HeaderComponent setNewsCategory = {setNewsCategory} category = {category}/>
       <SearchNewsComponent searchFunction = {searchNews} />
       <NewsComponent newsItems={newsArray} />
+      
+      {
+        loadMore<=newsResults && (
+          <>
+            <hr />
+            <div className='blend-more-news-container'>
+            <button onClick={() => setLoadMore(loadMore+5)} className='button-blend-more-news'> Load More </button>
+            </div>
+            </>
+        )
+      }
+
     </div>
-  );
+  )
 }
 
 export default App;
