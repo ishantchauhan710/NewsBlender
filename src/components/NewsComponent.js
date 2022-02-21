@@ -6,7 +6,7 @@ const NewsComponent = ({newsItems}) => {
     <div className='news-container'>
 
         {newsItems.map((newsItem) => (
-            <NewsCardComponent news={newsItem} />
+            <NewsCardComponent key={newsItem.title} news={newsItem} />
         ))};
         
     </div>

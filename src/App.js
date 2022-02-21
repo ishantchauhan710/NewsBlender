@@ -13,6 +13,10 @@ function App() {
   const [newsResults,setNewsResults] = useState();
   const [category,setCategory] = useState('general');
 
+  const setNewsCategory = (text) => {
+    setCategory(text)
+  }
+
 
   const newsApiURL = `https://newsapi.org/v2/top-headlines?country=in&apiKey=${apiKey}&category=${category}`
   
@@ -32,9 +36,10 @@ function App() {
     newsApi()
   },[newsResults,category]);
 
+
   return (
     <div className="App">
-      <HeaderComponent />
+      <HeaderComponent setNewsCategory = {setNewsCategory}/>
       <NewsComponent newsItems={newsArray} />
     </div>
   );
